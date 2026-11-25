@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>연회 초대장</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c2420; --bg2:#081814; --paper:#eef0ec; --ink:#14201d; --mute:#66736e;
+  --brass:#a98a4f; --line:#d3d8d2;
+  --serif:"Noto Serif KR","Nanum Myeongjo","Batang",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c2420;--bg2:#081814}}
+:root[data-theme="dark"]{--bg:#0c2420;--bg2:#081814}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+,::before,::after{box-sizing:inherit}
+body{margin:0;min-height:100%;background:radial-gradient(120% 80% at 50% 0%,var(--bg),var(--bg2));
+  font-family:var(--sans);color:var(--ink);display:flex;justify-content:center;padding:28px 16px 40px}
+.ticket{width:100%;max-width:380px;filter:drop-shadow(0 18px 30px rgba(0,0,0,.45));animation:rise .9s ease-out both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.ticket{animation:none}}
+.part{background:var(--paper);position:relative;padding:26px 24px}
+.top{border-radius:14px 14px 0 0;padding-top:28px}
+.top::before{content:"";position:absolute;inset:8px;border:1px solid var(--brass);border-radius:8px;pointer-events:none;opacity:.7}
+.mid{padding-top:22px;padding-bottom:22px}
+.bot{border-radius:0 0 14px 14px;padding-bottom:28px}
+/ perforation /
+.perf{height:0;position:relative;background:var(--paper)}
+.perf::before{content:"";position:absolute;left:18px;right:18px;top:-1px;border-top:2px dashed var(--line)}
+.perf::after{content:"";position:absolute;left:-11px;right:-11px;top:-11px;height:22px;
+  background:radial-gradient(circle 11px at 0 50%,var(--bg2) 98%,transparent 100%) left/51% 100% no-repeat,
+             radial-gradient(circle 11px at 100% 50%,var(--bg2) 98%,transparent 100%) right/51% 100% no-repeat}
+.rail{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;color:var(--mute);letter-spacing:.12em}
+.rail b{font-weight:500;color:var(--brass)}
+h1{font-family:var(--serif);font-weight:700;font-size:34px;line-height:1.25;margin:22px 0 6px;letter-spacing:-.01em}
+.sub{font-family:var(--serif);font-size:15px;color:var(--mute);margin:0 0 4px}
+.route{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin-top:26px}
+.stop small{display:block;font-size:11px;color:var(--mute);letter-spacing:.08em;margin-bottom:4px}
+.stop strong{font-family:var(--serif);font-size:25px;font-weight:600;line-height:1.1;display:block}
+.stop span{font-size:12.5px;color:var(--mute);display:block;margin-top:4px}
+.stop.r{text-align:right}
+.arrow{display:flex;flex-direction:column;align-items:center;color:var(--brass)}
+.arrow svg{width:46px;height:14px}
+.arrow i{font-style:normal;font-size:11px;margin-top:3px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 14px}
+.cell small{display:block;font-size:11px;color:var(--mute);letter-spacing:.08em;margin-bottom:3px}
+.cell p{margin:0;font-size:14.5px;line-height:1.5;font-weight:500}
+.cell.full{grid-column:1/-1}
+.note{font-family:var(--serif);font-size:14px;line-height:1.8;color:#2c3a36;margin:0}
+.stub{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-top:20px}
+.bars{height:46px;flex:1;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 9px,var(--ink) 9px 12px,transparent 12px 14px);opacity:.85}
+.no{font-size:11px;color:var(--mute);text-align:right;line-height:1.6}
+.rsvp{display:block;margin-top:22px;text-align:center;text-decoration:none;background:var(--ink);color:var(--paper);
+  padding:15px;border-radius:8px;font-size:15px;font-weight:500;letter-spacing:.04em}
+.rsvp:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.foot{text-align:center;font-size:12px;color:var(--mute);margin-top:12px}
+:root{--gold:linear-gradient(100deg,#8f7236 0%,#e8d291 26%,#b8964f 50%,#f5e6b4 74%,#9a7a3c 100%)}
+body{background:radial-gradient(70% 45% at 50% 0%,rgba(190,155,85,.25),transparent 70%),radial-gradient(120% 80% at 50% 0%,var(--bg),var(--bg2))}
+.top{background:linear-gradient(165deg,#13392f 0%,#0a201b 100%);padding:34px 24px 32px}
+.top::before{inset:9px;border:1px solid #c7a65f;border-radius:8px;opacity:.85;box-shadow:inset 0 0 0 4px #0c2620,inset 0 0 0 5px rgba(199,166,95,.45)}
+.top::after{content:"";position:absolute;left:0;right:0;top:0;height:5px;border-radius:14px 14px 0 0;background:var(--gold)}
+.top>{position:relative}
+.top .rail{color:#9fb3ac;margin-top:6px}
+.top .rail b{color:#e0c47e}
+.top .seal{border-color:#c7a65f;color:#e8d291;margin-top:18px}
+.orn{display:block;width:100%;height:14px;margin:22px 0 2px;color:#c7a65f}
+.top h1{font-size:42px;margin:14px 0 10px;letter-spacing:.02em;color:#e8d291;background:var(--gold) 100% 0/220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 2.6s ease-out .5s both}
+@keyframes shine{from{background-position:100% 0}to{background-position:0 0}}
+@media (prefers-reduced-motion:reduce){.top h1{animation:none;background-position:0 0}}
+.top .sub{color:#cdd8d3;line-height:1.7}
+.top .stop small,.top .stop span,.top .arrow i{color:#9fb3ac}
+.top .stop strong{color:#f3e9d0}
+.top .arrow{color:#d8b970}
+.mid{background:linear-gradient(180deg,#f3f2ec,var(--paper))}
+.cell small{color:#8c7440}
+.veil{all:unset;cursor:pointer;display:block;font-size:14.5px;line-height:1.5;font-weight:500;color:var(--ink);filter:blur(5px);transition:filter .6s ease;user-select:none;-webkit-tap-highlight-color:transparent}
+.veil.on{filter:none;cursor:default}
+.veil:focus-visible{outline:2px solid var(--brass);outline-offset:4px}
+.hint{display:block;margin-top:6px;font-size:11px;color:#8c7440}
+.rsvp{background:var(--gold);color:#1c1608;font-weight:600;letter-spacing:.08em;box-shadow:0 6px 16px rgba(143,114,54,.35)}
+.bars{background:repeating-linear-gradient(90deg,#14201d 0 2px,transparent 2px 4px,#14201d 4px 5px,transparent 5px 9px,#14201d 9px 12px,transparent 12px 14px)}
+.seal{display:inline-block;margin-top:16px;padding:5px 12px;border:1px solid var(--brass);border-radius:3px;font-family:var(--serif);font-size:12.5px;color:var(--brass);letter-spacing:.12em}
+</style>
+</head>
+<body>
+<main class="ticket">
+
+  <section class="part top">
+    <div class="rail"><span>특별 초청 승차권</span><b>No. 0001</b></div>
+    <span class="seal">본인 외 열람 금지</span>
+    <svg class="orn" viewBox="0 0 300 14" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 7h128M172 7h128"/><path d="M150 1l6 6-6 6-6-6z" fill="currentColor"/><path d="M134 7h6M160 7h6"/></svg>
+    <h1>연회<br>초대장</h1>
+    <p class="sub">대한민국뿐만 아니라 곳곳에서 이름을 떨치고 계신 당신께.</p>
+
+    <div class="route">
+      <div class="stop"><small>출발역</small><strong>낙천역</strong><span>1일차 00. 00 (요일)</span></div>
+      <div class="arrow">
+        <svg viewBox="0 0 46 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 7h42M37 2l6 5-6 5"/></svg>
+        <i>2일간</i>
+      </div>
+      <div class="stop r"><small>도착역</small><strong>단죄역</strong><span>2일차 00. 00 (요일)</span></div>
+    </div>
+  </section>
+
+  <div class="perf" aria-hidden="true"></div>
+
+  <section class="part mid">
+    <div class="grid">
+      <div class="cell"><small>탑승 조건</small><p style="filter:blur(4px);user-select:none" aria-label="비공개">???</p></div>
+      <div class="cell"><small>탑승 장소</small><p>낙천역 1호차</p></div>
+      <div class="cell"><small>좌석</small><p>VIP 지정석</p></div>
+      <div class="cell"><small>복장</small><p>격식차린 자율복</p></div>
+    </div>
+  </section>
+
+  <div class="perf" aria-hidden="true"></div>
+
+  <section class="part bot">
+
+    <a class="rsvp" href="#reply">참석 여부 알리기</a>
+    <p class="foot">회신 기한 2026. 00. 00까지</p>
+    <div class="stub">
+      <div class="bars" aria-hidden="true"></div>
+      <div class="no">초청인 강연식<br>본인 외 열람 금지</div>
+    </div>
+  </section>
+
+</main>
+<script>
+document.querySelectorAll('.veil').forEach(function(b){b.addEventListener('click',function(){b.classList.add('on');b.setAttribute('aria-pressed','true');var h=b.nextElementSibling;if(h){h.style.display='none'}})});
+</script>
+</body>
+</html>
