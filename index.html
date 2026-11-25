@@ -84,6 +84,14 @@ body{background:radial-gradient(70% 45% at 50% 0%,rgba(190,155,85,.25),transpare
 .veil.on{filter:none;cursor:default}
 .veil:focus-visible{outline:2px solid var(--brass);outline-offset:4px}
 .hint{display:block;margin-top:6px;font-size:11px;color:#8c7440}
+.secret{margin-top:20px;border-top:1px dashed var(--line);padding-top:16px}
+.secret summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:13.5px;color:#8c7440;text-align:center;letter-spacing:.06em}
+.secret summary::-webkit-details-marker{display:none}
+.secret summary:focus-visible{outline:2px solid var(--brass);outline-offset:4px}
+.secret[open] summary{margin-bottom:12px}
+.secret a{display:flex;justify-content:space-between;align-items:center;padding:13px 14px;margin-top:8px;border:1px solid #c7a65f;border-radius:8px;color:var(--ink);text-decoration:none;font-family:var(--serif);font-size:15px;font-weight:600;background:#f7f5ee}
+.secret a::after{content:"›";color:#a98a4f;font-size:18px}
+.secret a:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
 .rsvp{background:var(--gold);color:#1c1608;font-weight:600;letter-spacing:.08em;box-shadow:0 6px 16px rgba(143,114,54,.35)}
 .bars{background:repeating-linear-gradient(90deg,#14201d 0 2px,transparent 2px 4px,#14201d 4px 5px,transparent 5px 9px,#14201d 9px 12px,transparent 12px 14px)}
 .seal{display:inline-block;margin-top:16px;padding:5px 12px;border:1px solid var(--brass);border-radius:3px;font-family:var(--serif);font-size:12.5px;color:var(--brass);letter-spacing:.12em}
@@ -126,6 +134,12 @@ body{background:radial-gradient(70% 45% at 50% 0%,rgba(190,155,85,.25),transpare
 
     <a class="rsvp" href="#reply">참석 여부 알리기</a>
     <p class="foot">회신 기한 2026. 00. 00까지</p>
+    <details class="secret">
+      <summary>숨겨진 객차로 이동</summary>
+      <a href="https://band.us/n/acabb6xfdaS3M" target="_blank" rel="noopener">캐입방</a>
+      <a href="https://band.us/n/a4a1b2xed6T6d" target="_blank" rel="noopener">추리방</a>
+      <a href="https://band.us/n/a8adb8xfd1S3t" target="_blank" rel="noopener">앓이방</a>
+    </details>
     <div class="stub">
       <div class="bars" aria-hidden="true"></div>
       <div class="no">초청인 강연식<br>본인 외 열람 금지</div>
